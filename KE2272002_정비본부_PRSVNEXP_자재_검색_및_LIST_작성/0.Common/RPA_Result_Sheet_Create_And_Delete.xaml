@@ -1,0 +1,216 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RPA_Result_Sheet_Check" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ug="clr-namespace:UiPath.GSuite;assembly=UiPath.GSuite" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_OAuthClientID" Type="InArgument(x:String)" />
+    <x:Property Name="in_OAuthClientSecret" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:RPA_Result_Sheet_Check.in_OAuthClientID>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RPA_Result_Sheet_Check.in_OAuthClientID>
+  <this:RPA_Result_Sheet_Check.in_OAuthClientSecret>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RPA_Result_Sheet_Check.in_OAuthClientSecret>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1312.8,2803.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>RPA_Result_Sheet_Check_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.GSuite</x:String>
+      <x:String>UiPath.GSuite.Contracts</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="1. 수행 날짜별 RPA 처리 결과 탭 생성&#xA;2. 3일 초과한 탭은 삭제" DisplayName="RPA_Result_Sheet_Create_And_Delete" sap:VirtualizedContainerService.HintSize="712.8,2638.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="GSheetsNameArr" />
+      <Variable x:TypeArguments="x:Boolean" Name="당일_RPA_수행결과탭Bool" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uga:GSuiteApplicationScope ApiKey="{x:Null}" ContinueOnError="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" Password="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="OAuthClientID" CredentialID="[in_OAuthClientID]" CredentialSecret="[in_OAuthClientSecret]" DataStoreLocation="Local disk" DisplayName="RPA 수행 결과 탭 유무 확인 및 생성/삭제_GSuiteApplicationScope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="671.2,2501.6" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="UiPath" Services="Unselected">
+      <uga:GSuiteApplicationScope.AuthenticationScopes>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="32">
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/drive</InArgument>
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/calendar</InArgument>
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/documents</InArgument>
+          <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/spreadsheets</InArgument>
+          <InArgument x:TypeArguments="x:String">https://mail.google.com/</InArgument>
+        </scg:List>
+      </uga:GSuiteApplicationScope.AuthenticationScopes>
+      <uga:GSuiteApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ug:SimpleObjectContainer">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="RPA 수행 결과 탭 유무 확인 및 생성/삭제_Sequence" sap:VirtualizedContainerService.HintSize="637.6,2389.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="RPA 수행 결과 탭 확인중_Log Message" sap:VirtualizedContainerService.HintSize="596,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;RPA 수행 결과 탭 확인중..&quot;]" />
+            <Assign DisplayName="당일 RPA 수행 결과 탭 유무 초기화_Assign" sap:VirtualizedContainerService.HintSize="596,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[당일_RPA_수행결과탭Bool]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uga:GetSheets ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="해당 시트의 탭명 모두 추출_Get Sheets" sap:VirtualizedContainerService.HintSize="596,80.8" sap2010:WorkflowViewState.IdRef="GetSheets_1" Result="[GSheetsNameArr]" SpreadsheetId="[in_Config(&quot;[RPA] GPS RAIM CHECK SHEET_ID_&quot;+in_Config(&quot;대상시트&quot;).ToString).ToString]" />
+            <Assign DisplayName="날짜형식이 아닌 탭명 삭제_Assign" sap:VirtualizedContainerService.HintSize="596,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:String[]">[GSheetsNameArr]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:String[]">[GSheetsNameArr.Except(New String() {in_Config("[RPA] GPS RAIM CHECK SHEET_작업데이터").ToString, in_Config("[RPA] GPS RAIM CHECK SHEET_RPA수행결과").ToString, in_Config("[RPA] GPS RAIM CHECK SHEET_매뉴얼").ToString}).ToArray()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="3일 초과한 탭 확인 후 삭제_For Each" sap:VirtualizedContainerService.HintSize="596,986.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[GSheetsNameArr]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="TabName" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="3일 초과한 탭 확인 후 삭제_Body" sap:VirtualizedContainerService.HintSize="560.8,852" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[DateDiff(&quot;d&quot;, CDate(TabName), Now.Date)&gt;=3]" DisplayName="3일 초과한 탭 확인_If" sap:VirtualizedContainerService.HintSize="519.2,509.6" sap2010:WorkflowViewState.IdRef="If_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="3일 초과 탭 있음_Sequence" sap:VirtualizedContainerService.HintSize="375.2,360" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uga:DeleteSheet ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="Delete Sheet" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="DeleteSheet_1" SheetName="[TabName]" SpreadsheetId="[in_Config(&quot;[RPA] GPS RAIM CHECK SHEET_ID_&quot;+in_Config(&quot;대상시트&quot;).ToString).ToString]" />
+                          <ui:LogMessage DisplayName="3일 초과 탭 삭제 완료_Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[TabName+&quot; 탭 삭제 완료&quot;]" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                    <If Condition="[CDate(TabName)=CDate(in_Config(&quot;RPA_수행일&quot;))]" DisplayName="RPA 수행 날짜와 동일한 탭 유무 확인_If" sap:VirtualizedContainerService.HintSize="519.2,209.6" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Then>
+                        <Assign DisplayName="당일 RPA 수행 결과 탭 있음_Assign" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[당일_RPA_수행결과탭Bool]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <ui:LogMessage DisplayName="당일 RPA 수행 결과 탭 유무_Log Message" sap:VirtualizedContainerService.HintSize="596,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;당일 RPA 수행 결과 탭 유무: &quot;+당일_RPA_수행결과탭Bool.ToString]" />
+            <If Condition="[당일_RPA_수행결과탭Bool=True]" DisplayName="당일 RPA 수행 결과 탭 없을 경우 생성_If" sap:VirtualizedContainerService.HintSize="596,684" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Else>
+                <Sequence DisplayName="당일 RPA 수행 결과 탭 없음_Sequence" sap:VirtualizedContainerService.HintSize="375.2,534.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="lv_CopySheetNameStr" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uga:CopySheet ContinueOnError="{x:Null}" PasteSpreadsheetId="{x:Null}" AuthScopesInvalid="False" CopySheetName="[in_Config(&quot;[RPA] GPS RAIM CHECK SHEET_RPA수행결과&quot;).ToString]" CopySpreadsheetId="[in_Config(&quot;[RPA] GPS RAIM CHECK SHEET_ID_&quot;+in_Config(&quot;대상시트&quot;).ToString).ToString]" DisplayName="RPA 수행 결과 양식 복사_Copy Sheet" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="CopySheet_1" Result="[lv_CopySheetNameStr]" />
+                  <uga:RenameSheet ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="복사한 RPA 수행 결과 탭명 날짜로 수정_Rename Sheet" sap:VirtualizedContainerService.HintSize="333.6,134.4" sap2010:WorkflowViewState.IdRef="RenameSheet_1" NewSheetName="[in_Config(&quot;RPA_수행일&quot;).ToString]" OriginalSheetName="[lv_CopySheetNameStr]" SpreadSheetId="[in_Config(&quot;[RPA] GPS RAIM CHECK SHEET_ID_&quot;+in_Config(&quot;대상시트&quot;).ToString).ToString]" />
+                  <ui:LogMessage DisplayName="당일 RPA 수행 결과 탭 생성완료_Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[in_Config(&quot;RPA_수행일&quot;).ToString+&quot; RPA 수행 결과 탭 생성완료&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uga:GSuiteApplicationScope.Body>
+    </uga:GSuiteApplicationScope>
+  </Sequence>
+</Activity>
